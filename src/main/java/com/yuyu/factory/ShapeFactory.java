@@ -1,5 +1,9 @@
 package com.yuyu.factory;
 
+import com.yuyu.factory.impl.Circle;
+import com.yuyu.factory.impl.Rectangle;
+import com.yuyu.factory.impl.Square;
+
 /**
  * Created by 彦祖 .
  */

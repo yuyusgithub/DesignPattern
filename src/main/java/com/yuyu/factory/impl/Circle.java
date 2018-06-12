@@ -1,4 +1,6 @@
-package com.yuyu.factory;
+package com.yuyu.factory.impl;
+
+import com.yuyu.factory.Shape;
 
 /**
  * Created by 彦祖 .
