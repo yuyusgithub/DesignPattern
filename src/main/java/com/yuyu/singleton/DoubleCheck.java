@@ -4,6 +4,7 @@ package com.yuyu.singleton;
  * Created by 彦祖 .
  * double check 的目的是什么？
  * 见下面，第一次和第二次
+ * 这种方法姚仔jdk1.5以后使用，如果版本不到1.5，建议使用饿汉式
  */
 public class DoubleCheck {
 
