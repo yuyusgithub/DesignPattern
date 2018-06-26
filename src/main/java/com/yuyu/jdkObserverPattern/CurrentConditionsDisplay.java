@@ -10,28 +10,34 @@ import java.util.Observer;
  */
 public class CurrentConditionsDisplay implements Observer, DisplayElement {
 
-    Observable observable;
+    private Observable observable;
+
     private float temperature;
+
+    private float pressure;
+
     private float humidity;
 
-    public CurrentConditionsDisplay(Observable observable) {
+    public CurrentConditionsDisplay(Observable observable){
         this.observable = observable;
-        observable.addObserver(this);
+        this.observable.addObserver(this);
     }
 
     @Override
-    public void update(Observable obs, Object arg) {
-        if (obs instanceof WeatherData) {
-            WeatherData weatherData = (WeatherData)obs;
+    public void update(Observable observable, Object obj) {
+        if(observable instanceof WeatherData){
+            WeatherData weatherData = (WeatherData)observable;
             this.temperature = weatherData.getTemperature();
             this.humidity = weatherData.getHumidity();
+            this.pressure = weatherData.getPressure();
             display();
         }
     }
 
     @Override
     public void display() {
-        System.out.println("Current conditions: " + temperature
-                + "F degrees and " + humidity + "% humidity");
+        System.out.println("当前温度:" + this.temperature);
+        System.out.println("当期湿度:" + this.humidity);
+        System.out.println("当期气压:" + this.pressure);
     }
 }
